@@ -7,6 +7,7 @@ export default defineConfig({
   plugins: [
     Components({
       /* options */
+      dts: true,
     }),
     vue(),
   ],

@@ -1,17 +1,18 @@
 <template>
-  <main>
+  <div>
     <div>
     <div class="cont" v-if="isFirstTime">
       <div class="flex flex-column" >
         <h1>{{ text }}</h1>
       </div>
     </div>
-    <div v-if="!isFirstTime" class="fadein animation-duration-1000 ">
+    <div v-if="!isFirstTime" class="fadein animation-duration-2000 ">
+      <Presentation />
       <div>
       </div>
       </div>
     </div>
-  </main>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -20,7 +21,7 @@ import { ref,defineEmits, watch } from "vue";
 
 // const helperStore=useHelperStore();
 const textFull = ref("Welcome to my website!");
-const interval = 200;
+const interval = 100;
 const text = ref("");
 let index = 0;
 const isFirstTime = ref(true);
