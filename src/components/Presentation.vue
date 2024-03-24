@@ -1,6 +1,6 @@
 <template>
   <div class="flex">
-    <Image src="/public/me.jpg" alt="Image" width="650" class="m-4" />
+    <Image src="https://iili.io/JhUNTSs.jpg" alt="Image" width="650" class="m-4" />
     <div>
       <h1>Who am I?</h1>
       <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis ad necessitatibus ex esse dolor, voluptatibus molestiae praesentium aliquam repudiandae labore laudantium officia impedit animi exercitationem harum pariatur ut aspernatur corporis.
