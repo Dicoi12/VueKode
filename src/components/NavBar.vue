@@ -1,11 +1,14 @@
 <template>
     <ul class="flex w-full justify-content-around">
-        <li>Home</li>
-        <li>Projects</li>
-        <li>Skills</li>
+        <li class="cursor-pointer">Home</li>
+        <li class="cursor-pointer" @click="router.push('/projects')">Projects</li>
+        <li class="cursor-pointer">Skills</li>
     </ul>
 </template>
 <script setup lang="ts">
+import { useRouter } from 'vue-router';
+
+const router=useRouter();
 </script>
 <style scoped>
  ul {

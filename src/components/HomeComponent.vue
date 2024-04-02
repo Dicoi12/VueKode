@@ -1,12 +1,12 @@
 <template>
   <div>
     <div>
-    <div class="cont" v-if="isFirstTime">
+    <div class="cont" v-if="isFirstTime=='true'">
       <div class="flex flex-column" >
         <h1>{{ text }}</h1>
       </div>
     </div>
-    <div v-if="!isFirstTime" class="fadein animation-duration-2000 ">
+    <div v-if="isFirstTime='false'" class="fadein animation-duration-2000 ">
       <Presentation />
       <div>
       </div>
@@ -16,15 +16,19 @@
 </template>
 
 <script setup lang="ts">
+import { onBeforeMount } from "vue";
 import { ref,defineEmits, watch } from "vue";
 // import { useHelperStore } from "../stores/helperStore";
 
 // const helperStore=useHelperStore();
+onBeforeMount(()=>{
+  localStorage.setItem('isFirstTime','true');
+})
 const textFull = ref("Welcome to my website!");
 const interval = 100;
 const text = ref("");
 let index = 0;
-const isFirstTime = ref(true);
+const isFirstTime = ref(localStorage.getItem('isFirstTime')||'');
 const emit=defineEmits(['onTextViewed']);
 function afiseazaText() {
   if (index < textFull.value.length) {
@@ -32,13 +36,13 @@ function afiseazaText() {
     index++;
   } else {
     clearInterval(intervalID);
-    isFirstTime.value = false;
+    isFirstTime.value = 'false';
   }
 }
 watch(
   () => isFirstTime,
   () => {
-    if(isFirstTime.value==false)
+    if(isFirstTime.value=='false')
     emit('onTextViewed')
   }
 )

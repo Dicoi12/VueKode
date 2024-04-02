@@ -5,7 +5,7 @@
       <img
         src="https://iili.io/JhUNTSs.jpg"
         alt="Image"
-        class="m-4 sm:w-25rem"
+        class="m-4 sm:w-full lg:w-25rem"
       />
     </div>
     <div class="p-2">
